@@ -1,0 +1,14 @@
+.Counter {
+    background-color: cyan;
+    border-style: solid;
+    border-width: 1px;
+    margin: 2px;
+    font-size: 20pt;
+}
+.Counter-Button {
+    font-size: 20pt;
+    padding: 10px;
+    margin: 5px;
+    border-style: solid;
+    border-width: 5px;
+}

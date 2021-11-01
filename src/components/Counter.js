@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
 import { increment, decrement } from '../slices/sumSlice'
+import '../styles/Counter.css';
 
 function Counter(props) {
     const [number, setNumber] = useState(0);
@@ -17,10 +18,10 @@ function Counter(props) {
     }
 
     return (
-        <div>
-            <button onClick={increase}>+</button>
+        <div className="Counter">
+            <button className="Counter-Button" onClick={increase}>+</button>
             <span>{number}</span>
-            <button onClick={decrease}>-</button>
+            <button className="Counter-Button" onClick={decrease}>-</button>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react/cjs/react.development";
 import { useDispatch } from 'react-redux'
 import { setByAmount } from '../slices/sizeSlice'
+import '../styles/CounterSizeGenerator.css'
 
 function CounterSizeGenerator(props) {
     const [size, setSize] = useState(0);
@@ -20,9 +21,10 @@ function CounterSizeGenerator(props) {
     }
 
     return (
-        <div>
+        <div className="CounterSizeGenerator">
             <span>Size:</span>
             <input
+                className="CounterSizeGenerator-input"
                 min="0"
                 type="number"
                 value={size}
@@ -30,7 +32,7 @@ function CounterSizeGenerator(props) {
             >
 
             </input>
-            <button onClick={generateCounter}>generate</button>
+            <button className="CounterSizeGenerator-button" onClick={generateCounter}>generate</button>
         </div>
     );
 }
