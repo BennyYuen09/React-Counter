@@ -2,6 +2,7 @@ import React from "react";
 import CounterSizeGenerator from "./CounterSizeGenerator";
 import CounterGroup from "./CounterGroup";
 import { useState } from "react/cjs/react.development";
+import SumCounter from "./SumCounter";
 
 function MultiCounter() {
     const [counterSize, setCounterSize] = useState(0);
@@ -9,6 +10,7 @@ function MultiCounter() {
 
     function updateCounterSize(size) {
         setCounterSize(size)
+        setCounterSum(0);
     }
 
     function updateSum(sum) {
@@ -18,7 +20,8 @@ function MultiCounter() {
     return (
         <div>
             <CounterSizeGenerator updateCounterSize={updateCounterSize} />
-            <CounterGroup counterSize={counterSize} />
+            <CounterGroup counterSize={counterSize} updateSum={updateSum}/>
+            <SumCounter counterSum = {counterSum}></SumCounter>
         </div>
     );
 }
