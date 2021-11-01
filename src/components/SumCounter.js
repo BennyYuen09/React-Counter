@@ -1,9 +1,12 @@
 import React from "react";
+import { selectSum } from '../slices/sumSlice'
+import { useSelector } from 'react-redux'
 
 function SumCounter(props) {
+    const sum = useSelector(selectSum);
     return (
         <div>
-            <span>Sum: {props.counterSum}</span>
+            <span>Sum: {sum}</span>
         </div>
     )
 }
