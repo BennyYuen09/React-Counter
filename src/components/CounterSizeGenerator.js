@@ -1,13 +1,18 @@
 import React from "react";
 import { useState } from "react/cjs/react.development";
+import { useDispatch } from 'react-redux'
+import { setByAmount } from '../slices/sizeSlice'
 
 function CounterSizeGenerator(props) {
     const [size, setSize] = useState(0);
+    const dispatch = useDispatch();
 
     function handleChangeSize(event) {
         //event.target.value => string
 
-        setSize(parseInt(event.target.value) || 0);     
+        const newValue = parseInt(event.target.value) || 0;
+        setSize(newValue);
+        dispatch(setByAmount(newValue));     
     }
 
     function generateCounter() {

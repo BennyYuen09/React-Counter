@@ -2,7 +2,7 @@ import React from "react";
 import { selectSum } from '../slices/sumSlice'
 import { useSelector } from 'react-redux'
 
-function SumCounter(props) {
+function SumCounter() {
     const sum = useSelector(selectSum);
     return (
         <div>

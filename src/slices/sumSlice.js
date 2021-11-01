@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const slice = createSlice({
+export const sumSlice = createSlice({
     name: 'sum',
     initialState: {
       value: 0,
@@ -12,11 +12,14 @@ export const slice = createSlice({
       decrement: state => {
         state.value -= 1;
       },
+      setByAmount: (state, action) => {
+        state.value = action.payload;
+      },
     },
   });
 
-export const { increment, decrement } = slice.actions;
+export const { increment, decrement, setByAmount } = sumSlice.actions;
 
 export const selectSum = state => state.sum.value;
 
-export default slice.reducer;
+export default sumSlice.reducer;
