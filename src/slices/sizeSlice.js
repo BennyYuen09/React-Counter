@@ -6,13 +6,13 @@ export const sizeSlice = createSlice({
         value: 0,
     },
     reducers: {
-        setByAmount: (state, action) => {
+        setSizeByAmount: (state, action) => {
             state.value = action.payload;
         },
     },
 });
 
-export const { setByAmount } = sizeSlice.actions;
+export const { setSizeByAmount } = sizeSlice.actions;
 
 export const selectSize = state => state.size.value;
 
